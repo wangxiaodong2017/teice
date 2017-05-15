@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+	<head>
+		<title><!--网页标题-->图片上传放大镜</title>
+		<meta charset='utf-8'>
+		<meta name='keywords' content='放大镜,放大...'>
+		<meta name="description" content="对网页的描述">
+		<style>
+			*{padding:0; margin:0;}
+			body{
+				background:#3C8FC1;
+			}
+			#box{
+				position:relative;
+				width:900px;height:350px;
+				background:url('images/bg.jpg');
+				margin:100px auto;
+			}
+			div.uplod{
+				position:absolute;
+				bottom:20px;
+				left:0;
+				width:380px;height:100px;
+				background:#eee;
+				border:1px solid #eee;
+				border-radius:5px;
+				padding:10px;
+			}
+			div.show{
+				position:absolute;
+				right:57px;top:32px;
+				width:285px;height:285px;
+				border:1px solid red;
+				border-radius:10px;
+			}
+			.show img{height:285px;}
+			div.file{
+				float:left;
+				width:100px;height:100px;
+				border-radius:5px 0 0 5px;
+				background:#fff;
+				border:1px solid #ccc;
+				border-right:0;
+				background:url('images/img.png')no-repeat center;
+			}
+			div.file input{
+				width:100px;height:100px;
+				opacity:0;cursor:pointer;
+			}
+			#txt{
+				width:274px;height:98px;
+				float:left;
+			}
+			#showImg{width:285px}
+		</style>
+	</head>
+	<body>
+		<div id='box'>
+			<div class='uplod'>
+				<div class='file'>
+				<!--onchange监听input 的内容变化-->
+					<input type="file" onchange='uplod(this)'>
+				</div>
+				<input type="text" id='txt'>
+			</div>
+			<div class='show'>
+				<img src="" alt="" id="showImg">
+			</div>
+		</div>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src='js/magnifier.js'></script>
+		<script type="text/javascript">
+			//面向过程
+			var showImg=document.getElementById("showImg");
+			function uplod(obj){
+				console.log(obj.files[0].name);
+				document.getElementById("txt").value=obj.files[0].name;
+				//showImg.src=window.URl.createObjectURL(obj.files[0]);
+					//解析图片文件路径
+					console.log(window.URL.createObjectURL(obj.files[0]));
+				showImg.src=window.URL.createObjectURL(obj.files[0]);;
+				showImg.setAttribute("bigsrc",showImg);
+			}
+		</script>
+	</body>
+</html>

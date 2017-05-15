@@ -1,0 +1,66 @@
+<!doctype html><!--网页文本声明-->
+<html lang="en">
+ <head><!--与浏览器进行通信 告诉浏览器的一些基本信息-->
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+	<!--声明网页关键字 便于搜索引擎搜索  seo优化-->
+  <meta name="Keywords" content="女朋友 表白">
+  <meta name="Description" content="">
+	<!--css样式 修饰标签-->
+	<style>
+	*{/*通配符=>所有元素标签*/
+		margin:0;/*外边距为0*/
+	}
+	html,body{
+	width:100%;
+	height:100%;
+	}
+		body{
+			background:url("images/bg.jpg")no-repeat top/cover;
+			/*background-size:cover;图片自适应*/
+			overflow:hidden;
+		}
+		.snowfall-flakes{/*id选择器 #id名称*/
+		  width:20px;
+			height:18px;
+			position:relative;/*相对定位*/
+			
+		}
+		.snowfall-flakes:after,.snowfall-flakes:before{
+			width:10px;
+			height:14px;
+			background:red;
+			border-radius:50px 50px 0 0;
+			display:block;
+			position:absolute;/*绝对定位*/
+			top:0px;
+			left:0px;
+			content:'';
+		}
+		.snowfall-flakes:before{
+			transform:rotate(45deg);
+			left:3px;
+		}
+		.snowfall-flakes:after{
+			transform:rotate(-45deg);
+			
+		}
+	</style>
+  <title>表白专用</title>
+ </head>
+ <body>
+ <!--div标签 盒子模型 区域划分 id是标签的唯一标识符-->
+		<div id='love'>
+		</div>
+		<script src='js/jquery-1.11.1.min.js'></script>
+		<script src='js/snowfall.jquery.js'></script>
+		<script>
+		/*谁在什么时候做什么？*/
+		/*谁=》网页文档  什么时候=》马上 做什么=》下爱心*/
+			$(document).snowfall({
+				flakeCount:50			
+			});
+		</script>
+ </body>
+</html>

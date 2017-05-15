@@ -1,0 +1,109 @@
+<!doctype html><!--声明文档类型-->
+<html>
+	<head><!--负责被网页的通信头部  请求头 告诉浏览器本网页的基本信息-->
+		<title>天猫购物车模</title><!--设置标题-->
+		<meta charset="utf-8">
+		<!--搜索关键字 利于搜索引擎搜索-->
+		<meta name="keyword" content="web前端,天猫,车模 ">
+		<!--设置网页描述利于SEO搜索-->
+		<meta name="description" content="前端工程师">
+		<style>/*css样式修饰*/
+			*{
+				padding:0;
+				margin:0;
+			}
+			/*头部css*/
+			#header{
+				width:100%;height:160px;
+				background:url("images/banner.jpg") no-repeat;
+			}
+			/*内容css*/
+			#content{
+				width:990px;height:310px;
+				margin:0 auto;
+			}
+			#content ul li{
+				list-style:none;
+				margin:0 5px;
+				padding:5px;
+				float:left;
+				width:220px;height:300px;
+				border:1px solid #ccc;
+			}
+			#content ul li img{
+				width:220px;height:230px;
+			}
+			#content ul li p{
+				height:22px;
+				line-height:22px;
+				font-size:18px;
+			}
+			#content ul li span{
+				font-size:18px;
+				line-height:10px;
+				color:red;
+			}
+			#content ul li span.car{
+				float:right;
+				font-size:12px;
+				padding:2px 5px;
+				height:20px;
+				line-height:20px;
+				border-radius:5px;
+				background:red;
+				color:#fff;
+
+			}
+
+			#sidebar{
+				width:40px;
+				height:100%;
+				position:fixed;
+				top:0;right:0;
+				background:#ddd;
+			}
+
+			#sidebar div.buy{
+				position:relative;
+				width:40px;
+				height:100%;
+				background:#000;
+				color:#fff;
+			}
+
+			#sidebar div.buy span{
+				position:absolute;
+				top:50%;
+				right:0;
+				width:12px;
+				display:block;
+				background:red;
+				padding:8px 14px;
+				font-size:12px;
+			}
+		</style>
+	</head>
+	<body><!--用户展示主体-->
+		<!--header 头部开始-->
+		<div id="header"></div>
+		<!--content 内容开始-->
+		<div id="content">
+			<ul>
+				<li>
+					<img src="images/1.jpg" width="430" height='430' alt="加载失败。。。">
+					<p>2015夏季新款</p>
+					<p><span>¥199.0</span><span class="car">加入购物车</span></p>
+				</li>
+				<li><img src="images/2.jpg" alt="加载失败。。。"></li>
+				<li><img src="images/3.jpg" alt="加载失败。。。"></li>
+				<li><img src="images/4.jpg" alt="加载失败。。。"></li>
+			</ul>
+		</div>
+		<!-- siderbar 开始-->
+		<div id='sidebar'>
+			<div class="buy">
+				<span>加入购物车</span>
+			</div>
+		</div>
+	</body>
+</html>

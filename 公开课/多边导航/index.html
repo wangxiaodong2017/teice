@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content=""><!--搜索引擎搜索的关键字-->
+  <meta name="Description" content=""><!--对网页的介绍-->
+  <title>多变导航特效</title>
+	<style>/*css样式*/
+		*{
+			margin:0;
+			padding:0;
+		}
+		body{
+			background:url('images/bodyBg.jpg');
+		}
+		#box{
+			width:980px;
+			height:400px;
+			margin:100px auto;/*居中*/
+		}
+		#box ul li{
+			position:relative;
+			list-style:none;/*取消列表的默认样式*/
+			width:180px;height:105px;
+			background:rgba(0,0,0,.7);/*a代表透明度*/
+			float:left;
+			margin:30px 5px;
+		}
+		#box ul li.six{
+			margin-left:100px;
+		}
+
+		/*#box ul li div{
+			position:absolute;
+			top:0;left:0;
+			width:180px;height:105px;
+			background:rgba(0,0,0,.7);
+		}
+		#box ul li div.left{
+			transform:rotate(60deg)
+		}
+		#box ul li div.right{
+			transform:rotate(-60deg)
+		}*/
+
+		/*性能优化:减少代码累赘*/
+		#box ul li:before,#box ul li:after{/*在元素的内容的前边添加内容*/
+			content:"";
+			position:absolute;
+			top:0;
+			left:0;
+			width:180px;height:105px;
+			background:rgba(0,0,0,.7)
+		}
+		#box ul li:before{transform:rotate(60deg);}
+		#box ul li:after{/*在元素的内容的后边添加元素*/
+			transform:rotate(-60deg);
+		}
+		img{
+			position:absolute;
+			top:10px;left:50px;
+			z-index:9999;
+animation: rotation 3s linear infinite;
+		}
+		img:hover{
+			transform:rotate(120deg);
+		}
+	</style>
+ </head>
+ <body>
+  <div id="box">
+		<ul>
+			<li>
+				<!--img四要素：路径，宽，高，alt=>解释说明-->
+				<img src="images/1.png" alt="加载失败。。。">
+			</li>
+			<li>
+				<img src="images/2.png" alt="加载失败。。。">
+			</li>
+			<li>
+				<img src="images/3.png" alt="加载失败。。。">
+			</li>
+			<li>
+				<img src="images/4.png" alt="加载失败。。。">
+			</li>
+			<li>
+				<img src="images/5.png" alt="加载失败。。。">
+			</li>
+			<li class='six'>
+				<img src="images/6.png" alt="加载失败。。。">
+			</li>
+			<li>
+				<img src="images/7.png" alt="加载失败。。。">
+			</li>
+			<li>
+				<img src="images/8.png" alt="加载失败。。。">
+			</li>
+			<li>
+				<img src="images/9.png" alt="加载失败。。。">
+			</li>
+			<li>
+				<img src="images/10.png" alt="加载失败。。。">
+			</li>
+			<li>
+				<img src="images/11.png" alt="加载失败。。。">
+			</li>
+			<li>
+				<img src="images/12.png" alt="加载失败。。。">
+			</li>
+			<li>
+				<img src="images/13.png" alt="加载失败。。。">
+			</li>
+			<li>
+				<img src="images/14.png" alt="加载失败。。。">
+			</li>
+		</ul>
+	</div>
+ </body>
+</html>

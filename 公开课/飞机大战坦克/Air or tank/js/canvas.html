@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>黑客页面样式</title>
+		<style>
+			*{margin: 0;padding:0;}
+			body{background:#000;}
+		</style>
+	</head>
+	<body>
+		<canvas id="p" width="" height=""></canvas>
+		<script type="text/javascript">
+			window.onload=function(){
+				 var p=document.getElementById("p");
+				 var ctx=p.getContext("2d");
+				 //设置画布的宽和高
+				 p.width=window.innerWidth;
+				 p.height=window.innerHeight;
+				 //设置当前页面中应该出现的文字
+				 var w_text='矩形流星雨的黑客模式';
+				 var w_text=w_text.split("");
+				 var fontSize=12;
+				 //默认排列多少行
+				 var column=p.width/fontSize;
+				 var arr=[];
+				 for(var i=0;i<column;i++){
+				 	arr[i]=1;
+				 }
+				 //绘制
+				 function draw(){
+				 	ctx.fillStyle='rgba(0,0,0,0.05)';
+				 	ctx.fillRect(0,0,p.width,p.height);
+				 	ctx.fillStyle='#0f0';
+				 	for(var i=0;i<arr.length;i++){
+				 		var text=w_text[Math.floor(Math.random()*w_text.length)];
+				 		//绘制文字
+				 		ctx.fillText(text,i*fontSize,arr[i]*fontSize);
+				 		if(arr[i]*fontSize>p.height||Math.random()>0.95){
+				 			arr[i]=0;
+				 		}
+				 		arr[i]++;
+				 	}
+				 }
+				 //调用函数
+				 setInterval(draw,33);
+			}
+		</script>
+	</body>
+</html>
